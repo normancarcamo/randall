@@ -1,0 +1,15 @@
+{
+  "title": "Autenticación",
+  "email": {
+    "error": "Correo electrónico invalido",
+    "placeholder": "Correo electrónico"
+  },
+  "password": {
+    "error": "Contraseña invalida",
+    "placeholder": "Contraseña"
+  },
+  "button": {
+    "text": "Ingresar"
+  },
+  "error": "Credenciales incorrectas, intenta de nuevo."
+}

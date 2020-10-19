@@ -1,27 +1,114 @@
 {
-  "name": "next-ncardez",
+  "name": "next-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon --watch",
+    "next": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p ${PORT:=3005}",
+    "lint:css": "stylelint './src/**/*.js'",
+    "now": "next build && NODE_ENV=production node src/server/index.js",
+    "test": "NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/normancarcamo/next-ncardez.git"
+    "url": "git+https://github.com/normancarcamo/next-boilerplate.git"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,prettierrc,eslintrc,babelrc,d.ts}": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Norman Carcamo",
+  "license": "SEE LICENSE IN LICENSE FILE",
   "bugs": {
-    "url": "https://github.com/normancarcamo/next-ncardez/issues"
+    "url": "https://github.com/normancarcamo/next-boilerplate/issues"
   },
-  "homepage": "https://github.com/normancarcamo/next-ncardez#readme",
+  "homepage": "https://github.com/normancarcamo/next-boilerplate#readme",
   "dependencies": {
-    "next": "^9.4.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@hapi/joi": "^17.1.1",
+    "@types/jest": "^26.0.14",
+    "date-fns": "^2.16.1",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6",
+    "i18next": "^19.8.2",
+    "isomorphic-unfetch": "^3.1.0",
+    "jwt-decode": "^3.0.0",
+    "lodash": "^4.17.20",
+    "next": "^9.5.5",
+    "next-i18next": "^6.0.3",
+    "next-images": "^1.6.0",
+    "next-redux-wrapper": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-i18next": "^11.7.3",
+    "react-paginate": "^6.5.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "styled-bootstrap-grid": "^3.1.0",
+    "styled-components": "^5.2.0",
+    "styled-map": "^3.3.0",
+    "styled-normalize": "^8.0.7",
+    "swr": "^0.2.3",
+    "ts-jest": "^26.4.1"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/enzyme": "^3.10.7",
+    "@types/express": "^4.17.8",
+    "@types/hapi__joi": "^17.1.6",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/lodash": "^4.14.162",
+    "@types/node": "^14.11.8",
+    "@types/react": "^16.9.52",
+    "@types/react-paginate": "^6.2.1",
+    "@types/react-redux": "^7.1.9",
+    "@types/redux-logger": "^3.0.8",
+    "@types/styled-components": "^5.1.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.5.2",
+    "babel-plugin-styled-components": "^1.11.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "husky": "^4.3.0",
+    "jest": "^26.5.3",
+    "lint-staged": "^10.4.0",
+    "nodemon": "^2.0.5",
+    "prettier": "^2.1.2",
+    "react-test-renderer": "^16.14.0",
+    "redux-devtools": "^3.7.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^4.0.3",
+    "typescript-styled-plugin": "^0.15.0"
   }
 }

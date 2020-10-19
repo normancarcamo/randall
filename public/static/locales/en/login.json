@@ -1,0 +1,15 @@
+{
+  "title": "Authentication",
+  "email": {
+    "error": "Invalid email",
+    "placeholder": "Email"
+  },
+  "password": {
+    "error": "Invalid password",
+    "placeholder": "Password"
+  },
+  "button": {
+    "text": "Login"
+  },
+  "error": "Invalid credentials, please try again."
+}

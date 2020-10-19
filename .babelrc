@@ -1,0 +1,39 @@
+{
+  "presets": [["next/babel"], "@babel/preset-typescript"],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": false,
+        "fileName": false
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "fileName": false
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "displayName": false,
+            "fileName": false
+          }
+        ]
+      ]
+    }
+  }
+}
